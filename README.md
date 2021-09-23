@@ -23,14 +23,22 @@ Only Android provides automated SMS reading capability
 
 ## Features
   
-🤖 - Simple and very intuitive user interface 
+🤖 - Simple and very intuitive user interface
+
 🤖 - Automatically generate and confirm OTP
+
 🤖 - Notifies you with what the bot is doing
+
 🤖 - Sound alarm when a slot is available in the specified range
+
 🤖 - Download the booking receipt with in the app
+
 🤖 - Cancel scheduled appointment within the app
+
 🤖 - Bot make sure that it is not overloading Co-Win website
+
 🤖 - Spread the word if you like the app
+
 🤖 - Buy me a coffee by donating to https://patreon.com/adarshtp 🙏🏻
 
 ## Demo
