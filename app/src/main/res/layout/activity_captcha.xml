@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scaleType="fitXY"
+    style="?pageBackground"
+    tools:context=".CaptchaActivity">
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:gravity="bottom|end"
+        android:padding="20dp">
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/proceed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            style="?button"
+            android:text="Book Appointment" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/stop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="?button"
+            android:textAllCaps="false"
+            android:text="Cancel" />
+    </LinearLayout>
+    <ScrollView
+        android:layout_above="@id/buttons"
+        android:layout_alignParentTop="true"
+        android:id="@+id/parentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <androidx.cardview.widget.CardView
+                android:id="@+id/captcha_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardMaxElevation="1dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+                    <ImageButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/refresh_captcha"
+                        android:layout_marginTop="2dp"
+                        style="?button"
+                        android:layout_gravity="right"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/baseline_sync_24"/>
+                    <ImageView
+                        android:id="@+id/captcha_image"
+                        android:layout_gravity="center"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+                        android:adjustViewBounds="true"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+                    <EditText
+                        android:id="@+id/captcha_text"
+                        android:layout_below="@id/captcha_image"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/text_large_nobold"
+                        android:layout_marginTop="30dp"
+                        android:lines="1"
+                        android:hint="Enter captcha text shown"
+                        android:inputType="text"
+                        android:text="" />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Enter the exact captcha with uppercase and lowercase as shown"
+                        style="@style/text_hint" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_below="@+id/captcha_container"
+                android:id="@+id/data_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:cardElevation="10dp"
+                app:cardCornerRadius="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardMaxElevation="1dp"
+                app:cardPreventCornerOverlap="true"
+                app:cardUseCompatPadding="true"
+                >
+                <TableLayout
+                    android:layout_gravity="center"
+                    android:layout_margin="20dp"
+                    android:stretchColumns="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TableRow
+                        android:layout_marginBottom="30dp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="Vaccine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1" />
+                        <TextView
+                            android:id="@+id/vaccine"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:paddingRight="2dp"
+                            android:text="COVIDSHIELD"
+                            android:gravity="right"
+                            style="@style/text_large_med"
+                            android:layout_column="2" />
+                    </TableRow>
+                    <TableRow
+                        android:layout_marginBottom="30dp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="Address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1" />
+                        <TextView
+                            android:layout_weight="1"
+                            android:paddingRight="2dp"
+                            android:id="@+id/loc_address"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="67-1 NEW ROHTAK ROAD\nNEW DELHI 110005"
+                            android:gravity="right"
+                            style="@style/text_large_med"
+                            android:layout_column="2" />
+                    </TableRow>
+                    <TableRow
+                        android:layout_marginBottom="30dp"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="Date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1" />
+                        <TextView
+                            android:layout_weight="1"
+                            android:paddingRight="2dp"
+                            android:id="@+id/loc_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="20-07-2021"
+                            android:gravity="right"
+                            style="@style/text_large_med"
+                            android:layout_column="2" />
+                    </TableRow>
+                    <TableRow
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:text="Slot"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_column="1" />
+                        <TextView
+                            android:layout_weight="1"
+                            android:paddingRight="2dp"
+                            android:id="@+id/loc_slot"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="10:30AM-11:30AM"
+                            style="@style/text_large_med"
+                            android:gravity="right"
+                            android:layout_column="2" />
+                    </TableRow>
+                </TableLayout>
+            </androidx.cardview.widget.CardView>
+
+        </RelativeLayout>
+    </ScrollView>
+    <RelativeLayout
+        android:id="@+id/main_layoutPageLoading"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitXY"
+        android:fillViewport="true"
+        android:background="#DD111111"
+        android:gravity="center"
+        android:elevation="22dp"
+        android:visibility="gone" >
+
+        <ProgressBar style="@style/Widget.MaterialComponents.CircularProgressIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            />
+    </RelativeLayout>
+</RelativeLayout>
